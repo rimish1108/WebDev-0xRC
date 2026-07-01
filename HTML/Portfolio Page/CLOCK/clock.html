@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Dashboard Clock</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =========================================
+                WEATHER WIDGET
+    ========================================== -->
+
+    <div class="weather-widget">
+
+        <div class="weather-circle">
+
+            <i class="fas fa-cloud"></i>
+
+            <h2 id="temperature">14°C</h2>
+
+            <p id="city">Weather</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+                MAIN CLOCK
+    ========================================== -->
+
+    <div class="clock-wrapper">
+
+        <!-- Date Ring -->
+
+        <div class="ring date-ring">
+
+            <div class="ring-track"></div>
+
+            <div class="ring-progress" id="dateProgress"></div>
+
+            <div class="ring-text" id="dateText">
+
+            </div>
+
+        </div>
+
+
+        <!-- Month Ring -->
+
+        <div class="ring month-ring">
+
+            <div class="ring-track"></div>
+
+            <div class="ring-progress" id="monthProgress"></div>
+
+            <div class="ring-text" id="monthText">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Day Ring -->
+
+        <div class="ring day-ring">
+
+            <div class="ring-track"></div>
+
+            <div class="ring-progress" id="dayProgress"></div>
+
+            <div class="ring-text" id="dayText">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Seconds Ring -->
+
+        <div class="ring second-ring">
+
+            <div class="ring-track"></div>
+
+            <div class="ring-progress" id="secondProgress"></div>
+
+        </div>
+
+
+
+        <!-- Clock -->
+
+        <div class="clock">
+
+            <!-- Numbers -->
+
+            <div class="number number12">12</div>
+            <div class="number number3">3</div>
+            <div class="number number6">6</div>
+            <div class="number number9">9</div>
+
+            <!-- Center Dot -->
+
+            <div class="center-dot"></div>
+
+            <!-- Hands -->
+
+            <div class="hand hour-hand" id="hourHand"></div>
+
+            <div class="hand minute-hand"
+                 id="minuteHand"></div>
+
+            <div class="hand second-hand"
+                 id="secondHand"></div>
+
+        </div>
+
+
+        <!-- Digital Time -->
+
+        <div class="digital-clock">
+
+            <h1 id="digitalTime">
+                00:00:00
+            </h1>
+
+            <p id="fullDate">
+
+                Thursday,
+                June 25,
+                2026
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+                FITNESS
+    ========================================== -->
+
+    <div class="fitness-widget">
+
+        <div class="fitness-circle">
+
+            <div class="bars">
+
+                <span class="bar red"></span>
+                <span class="bar orange"></span>
+                <span class="bar yellow"></span>
+                <span class="bar green"></span>
+                <span class="bar blue"></span>
+
+            </div>
+
+            <h2>FITNESS</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- =========================================
+        Hidden Data
+========================================== -->
+
+<div class="hidden-data">
+
+    <span id="monthName"></span>
+
+    <span id="dayName"></span>
+
+    <span id="dateNumber"></span>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

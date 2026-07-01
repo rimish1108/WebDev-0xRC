@@ -1,0 +1,1216 @@
+/*====================================================
+        MODERN CLOCK DASHBOARD
+        PART 2A
+=====================================================*/
+
+/*------------------------
+    GOOGLE RESET
+-------------------------*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#2f2f2f;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+}
+
+/*------------------------
+        DASHBOARD
+-------------------------*/
+
+.dashboard{
+
+    position:relative;
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/*==========================
+        WEATHER
+===========================*/
+
+.weather-widget{
+
+    position:absolute;
+
+    left:80px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+.weather-circle{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:#373737;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+
+    inset 0 0 15px rgba(255,255,255,.05),
+
+    0 20px 40px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.weather-circle:hover{
+
+    transform:scale(1.05);
+
+}
+
+.weather-circle i{
+
+    font-size:38px;
+
+    color:#ffffff;
+
+    margin-bottom:12px;
+
+}
+
+.weather-circle h2{
+
+    font-size:34px;
+
+    font-weight:600;
+
+}
+
+.weather-circle p{
+
+    margin-top:8px;
+
+    color:#bdbdbd;
+
+    letter-spacing:2px;
+
+}
+
+
+/*==========================
+        FITNESS
+===========================*/
+
+.fitness-widget{
+
+    position:absolute;
+
+    right:80px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+.fitness-circle{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:#373737;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    box-shadow:
+
+    inset 0 0 15px rgba(255,255,255,.05),
+
+    0 20px 40px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.fitness-circle:hover{
+
+    transform:scale(1.05);
+
+}
+
+.fitness-circle h2{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    letter-spacing:4px;
+
+    font-weight:500;
+
+}
+
+
+/*==========================
+        BARS
+===========================*/
+
+.bars{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:5px;
+
+    height:55px;
+
+}
+
+.bar{
+
+    width:8px;
+
+    border-radius:10px;
+
+    display:block;
+
+}
+
+.red{
+
+    height:22px;
+
+    background:#ff4d4d;
+
+}
+
+.orange{
+
+    height:34px;
+
+    background:#ff9d00;
+
+}
+
+.yellow{
+
+    height:44px;
+
+    background:#ffd633;
+
+}
+
+.green{
+
+    height:52px;
+
+    background:#5edb67;
+
+}
+
+.blue{
+
+    height:60px;
+
+    background:#48b8ff;
+
+}
+
+
+/*==========================
+        CLOCK WRAPPER
+===========================*/
+
+.clock-wrapper{
+
+    position:relative;
+
+    width:620px;
+
+    height:620px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/*==========================
+        DIGITAL CLOCK
+===========================*/
+
+.digital-clock{
+
+    position:absolute;
+
+    bottom:-90px;
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.digital-clock h1{
+
+    font-size:42px;
+
+    letter-spacing:4px;
+
+    font-weight:600;
+
+}
+
+.digital-clock p{
+
+    margin-top:10px;
+
+    color:#bfbfbf;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+
+}
+
+
+/*==========================
+        COMMON RINGS
+===========================*/
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.ring-track{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.05);
+
+}
+
+.ring-progress{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+}
+
+
+/*==========================
+        HIDDEN DATA
+===========================*/
+
+.hidden-data{
+
+    display:none;
+
+}
+
+
+/*==========================
+        UTILITY
+===========================*/
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.shadow{
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.round{
+
+    border-radius:50%;
+
+}
+
+.transition{
+
+    transition:.35s;
+
+}
+
+/*====================================================
+                PART 2B
+        ANALOG CLOCK & RINGS
+====================================================*/
+
+
+/*==========================
+        MAIN CLOCK
+==========================*/
+
+.clock{
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:#202020;
+
+    border:8px solid #3b3b3b;
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,.03),
+        inset 0 0 50px rgba(0,0,0,.65),
+        0 0 25px rgba(0,0,0,.55);
+
+    z-index:100;
+
+}
+
+
+/*==========================
+      CLOCK FACE GLOW
+==========================*/
+
+.clock::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.clock::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:24px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.04);
+
+}
+
+
+/*==========================
+        NUMBERS
+==========================*/
+
+.number{
+
+    position:absolute;
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.number12{
+
+    top:12px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.number3{
+
+    right:16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+.number6{
+
+    bottom:12px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.number9{
+
+    left:16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+
+/*==========================
+        CLOCK HANDS
+==========================*/
+
+.hand{
+
+    position:absolute;
+
+    left:50%;
+    bottom:50%;
+
+    transform-origin:bottom center;
+
+    transform:translateX(-50%) rotate(0deg);
+
+    border-radius:20px;
+
+}
+
+
+/*------------------------
+        HOUR
+-------------------------*/
+
+.hour-hand{
+
+    width:8px;
+
+    height:70px;
+
+    background:#ffffff;
+
+    z-index:30;
+
+}
+
+
+/*------------------------
+        MINUTE
+-------------------------*/
+
+.minute-hand{
+
+    width:5px;
+
+    height:95px;
+
+    background:#e6e6e6;
+
+    z-index:40;
+
+}
+
+
+/*------------------------
+        SECOND
+-------------------------*/
+
+.second-hand{
+
+    width:2px;
+
+    height:110px;
+
+    background:#ff5050;
+
+    z-index:50;
+
+}
+
+
+/*==========================
+        CENTER PIN
+==========================*/
+
+.center-dot{
+
+    position:absolute;
+
+    width:16px;
+
+    height:16px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:999;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,.55);
+
+}
+
+
+/*==========================
+      SECOND RING
+==========================*/
+
+.second-ring{
+
+    width:320px;
+
+    height:320px;
+
+    border:2px solid rgba(255,255,255,.08);
+
+}
+
+.second-ring .ring-progress{
+
+    border:3px solid rgba(255,255,255,.12);
+
+}
+
+
+/*==========================
+      DAY RING
+==========================*/
+
+.day-ring{
+
+    width:390px;
+
+    height:390px;
+
+    border:2px solid rgba(255,255,255,.06);
+
+}
+
+.day-ring .ring-progress{
+
+    border:3px solid rgba(255,255,255,.08);
+
+}
+
+
+/*==========================
+      MONTH RING
+==========================*/
+
+.month-ring{
+
+    width:470px;
+
+    height:470px;
+
+    border:2px solid rgba(255,255,255,.05);
+
+}
+
+.month-ring .ring-progress{
+
+    border:3px solid rgba(255,255,255,.06);
+
+}
+
+
+/*==========================
+      DATE RING
+==========================*/
+
+.date-ring{
+
+    width:560px;
+
+    height:560px;
+
+    border:2px solid rgba(255,255,255,.05);
+
+}
+
+.date-ring .ring-progress{
+
+    border:3px solid rgba(255,255,255,.05);
+
+}
+
+
+/*==========================
+      RING TEXT
+==========================*/
+
+.ring-text{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#707070;
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    pointer-events:none;
+
+}
+
+
+/*==========================
+      CLOCK SHADOW
+==========================*/
+
+.clock-wrapper{
+
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));
+
+}
+
+
+/*==========================
+      GLASS EFFECT
+==========================*/
+
+.weather-circle,
+.fitness-circle,
+.clock{
+
+    backdrop-filter:blur(12px);
+
+}
+
+
+/*==========================
+        POINTER
+==========================*/
+
+.hand::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:10px;
+
+    left:0;
+
+    top:-2px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+/*====================================================
+                PART 2C
+      ANIMATIONS • EFFECTS • RESPONSIVE
+====================================================*/
+
+
+/*==============================
+        BACKGROUND GLOW
+==============================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:900px;
+    height:900px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,0));
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at 20% 20%,
+        rgba(255,255,255,.03),
+        transparent 30%),
+
+        radial-gradient(circle at 80% 80%,
+        rgba(255,255,255,.02),
+        transparent 30%);
+
+    z-index:-3;
+
+}
+
+
+/*==============================
+        HOVER EFFECTS
+==============================*/
+
+.weather-circle:hover,
+.fitness-circle:hover{
+
+    box-shadow:
+
+        inset 0 0 15px rgba(255,255,255,.08),
+
+        0 25px 50px rgba(0,0,0,.65);
+
+}
+
+.clock:hover{
+
+    transform:scale(1.02);
+
+    transition:.4s;
+
+}
+
+
+/*==============================
+        CLOCK ANIMATION
+==============================*/
+
+.clock{
+
+    animation:clockFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes clockFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==============================
+      GLOWING CENTER PIN
+==============================*/
+
+.center-dot{
+
+    animation:centerGlow 2s infinite alternate;
+
+}
+
+@keyframes centerGlow{
+
+    from{
+
+        box-shadow:0 0 8px rgba(255,255,255,.4);
+
+    }
+
+    to{
+
+        box-shadow:0 0 20px rgba(255,255,255,.9);
+
+    }
+
+}
+
+
+/*==============================
+        FITNESS BARS
+==============================*/
+
+.bar{
+
+    animation:barBounce 1.8s infinite alternate;
+
+}
+
+.orange{
+
+    animation-delay:.1s;
+
+}
+
+.yellow{
+
+    animation-delay:.2s;
+
+}
+
+.green{
+
+    animation-delay:.3s;
+
+}
+
+.blue{
+
+    animation-delay:.4s;
+
+}
+
+@keyframes barBounce{
+
+    from{
+
+        transform:scaleY(.8);
+
+    }
+
+    to{
+
+        transform:scaleY(1.15);
+
+    }
+
+}
+
+
+/*==============================
+      DIGITAL CLOCK
+==============================*/
+
+.digital-clock h1{
+
+    text-shadow:
+
+        0 0 10px rgba(255,255,255,.15);
+
+}
+
+.digital-clock p{
+
+    opacity:.75;
+
+}
+
+
+/*==============================
+        RING EFFECT
+==============================*/
+
+.ring{
+
+    transition:.4s;
+
+}
+
+.ring:hover{
+
+    transform:scale(1.015);
+
+}
+
+
+/*==============================
+      FADE ANIMATION
+==============================*/
+
+.weather-widget,
+.fitness-widget,
+.clock-wrapper{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==============================
+        SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#2f2f2f;
+
+}
+
+
+/*==============================
+      RESPONSIVE
+==============================*/
+
+@media(max-width:1200px){
+
+.weather-widget{
+
+    left:30px;
+
+}
+
+.fitness-widget{
+
+    right:30px;
+
+}
+
+.clock-wrapper{
+
+    transform:scale(.9);
+
+}
+
+}
+
+
+@media(max-width:992px){
+
+.weather-widget,
+.fitness-widget{
+
+    display:none;
+
+}
+
+.clock-wrapper{
+
+    transform:scale(.82);
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.clock-wrapper{
+
+    transform:scale(.65);
+
+}
+
+.digital-clock{
+
+    bottom:-70px;
+
+}
+
+.digital-clock h1{
+
+    font-size:30px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.clock-wrapper{
+
+    transform:scale(.52);
+
+}
+
+.digital-clock{
+
+    bottom:-55px;
+
+}
+
+.digital-clock h1{
+
+    font-size:22px;
+
+}
+
+.digital-clock p{
+
+    font-size:12px;
+
+}
+
+}
+
+
+/*==============================
+        SELECTION
+==============================*/
+
+::selection{
+
+    background:#ffffff;
+
+    color:#222;
+
+}
+
+
+/*==============================
+        SMOOTH
+==============================*/
+
+*{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/*==============================
+          END
+==============================*/
